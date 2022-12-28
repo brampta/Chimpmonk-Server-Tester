@@ -1,0 +1,55 @@
+.dashcontainer{
+    padding:16px;
+    vertical-align: top;
+    display: block;
+    border-radius: 10px;
+    background-color: lightgrey;
+    border: 2px solid orange;
+    display: block;
+    margin-bottom: 20px;
+}
+.dashtitle {
+    background-color: #712828;
+    display: block;
+    margin: 0;
+    margin-bottom: 20px;
+    font-size: 40px;
+    color: darkkhaki;
+    padding: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    text-align: center;
+}
+.dashsubtitle {
+    font-size: 20px;
+    text-align: left;
+}
+.dashbuttons {
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: lightgrey;
+    border: 2px solid orange;
+    display: block;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+.dashlogs {
+    border-radius: 10px;
+    background-color: lightgrey;
+    border: 2px solid orange;
+    display: block;
+    margin-bottom: 20px;
+}
+#problogs {
+
+}
+.interfooter {
+    text-align:center;
+    border-radius: 10px;
+    background-color: #462020;
+    display: block;
+    margin-bottom: 20px;
+}
+.interfooter a {
+    color: white;
+}

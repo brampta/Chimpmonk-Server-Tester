@@ -8,39 +8,45 @@ var test_DB = <?php echo $test_DB; ?>;
 var max_items_in_processlist = <?php echo $max_items_in_processlist; ?>;
 var alarm_after_how_many_bad_connections = <?php echo $alarm_after_how_many_bad_connections; ?>;
 </script>
-<script type="text/javascript" src="scripts.js"></script>
+
+
+<link rel="stylesheet" href="css.css">
 </head>
 <body>
-        <div style="padding:16px;">
+        <div class="dashcontainer">
 
 
-            <h1>Chipmunk Server Tester</h1>
-
-            <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="240" height="180" id="simpleBroadcaster" align="middle" style="z-index:10000;">
-                <param name="allowScriptAccess" value="always" />
-
-                <param name="movie" value="server_tester.swf?v=1.04" />
-                <param name="loop" value="false" />
-                <param name="quality" value="high" />
-                <param name="bgcolor" value="#000000" />
-                <param name="allowFullScreen" value="true" />
-                <param name="wmode" value="transparent" />
-                <embed style="z-index:10000;" src="server_tester.swf?v=1.02" loop="false" quality="high" bgcolor="#000000" width="240" height="180" name="simpleBroadcaster"  align="middle" allowScriptAccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" allowFullScreen="true" wmode="transparent"></embed>
-            </object>
+            <h1 class="dashtitle">Chipmunk Server Tester</h1>
 
 
+            <div class="dashbuttons">
+                <a onclick="makesound('sound_good')" style="cursor:pointer;">test sound_good</a>
+                | <a onclick="makesound('sound_bad')" style="cursor:pointer;">test sound_bad</a>
+            </div>
+
+            <div class="dashbuttons">
+                good volume: <input type="number" id="vol_good" class="vol" value="0.3" step=".1" onchange=""><br>
+                bad volume: <input type="number" id="vol_bad" class="vol" value="1.0" step=".1"><br>
+                other volume: <input type="number" id="vol_other" class="vol" value="0.7" step=".1"><br>
+            </div>
+
+            <div class="dashlogs">
+                <h4 class="dashtitle dashsubtitle">problem logs</h4>
+                <div id="problogs"></div>
+            </div>
 
 
-
-            
-            <a onclick="makesound('sound_good')" style="cursor:pointer;">test sound_good</a> | <a onclick="makesound('sound_bad')" style="cursor:pointer;">test sound_bad</a>
-
-
-            <div id="problogs"></div>
-
-
-            <div style="text-align:right;"><a href="http://intercode.ca/">intercode.ca</a></div>
+            <div class="interfooter"><a href="http://intercode.ca/">intercode.ca</a></div>
 
         </div>
+
+
+        <!-- jQuery -->
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+        <script type="text/javascript" src="scripts.js"></script>
+
     </body>
 	</html>

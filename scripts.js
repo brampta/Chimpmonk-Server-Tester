@@ -8,19 +8,55 @@ var test_url = "xmltest.xml"; //version that tests only web server, not DB
 if(test_DB==1)
 {test_url = "xmltest.php";} //version that tests both web server and DB!
 
+var volumes = new Array();
+volumes['good'] = null;
+volumes['bad'] = null;
+volumes['other'] = null;
+function get_volumes(){
+
+	for (let key in volumes) {
+		if (volumes.hasOwnProperty(key)) {
+			//console.log(key, volumes[key]);
+			let vol_id = 'vol_' + key;
+			//console.log('vol_id',vol_id);
+			let input = document.getElementById(vol_id);
+			let value = input.value;
+			volumes[key] = value;
+		}
+	}
+}
+get_volumes();
+
+$( ".vol" ).change(function() {
+	let prefix_to_remove = 'id_';
+	let vol_name = this.id.substr(prefix_to_remove.length+1);
+	//console.log('vol_name',vol_name);
+	volumes[vol_name] = this.value;
+});
 
 function makesound(elsound)
 {
 	// var myFlashMovie = document.simpleBroadcaster;
 	// myFlashMovie.playsound_js(elsound);
 
-	console.log('elsound',elsound);
-	var prefix_to_add = 'sounds/';
-	var prefix_to_remove = 'sound_';
-	var suffix_to_add = '.mp3';
-	var sound_file_name = prefix_to_add + elsound.substr(prefix_to_remove.length) + suffix_to_add;
-	console.log('playing file',sound_file_name);
-	var audio = new Audio(sound_file_name);
+	//console.log('elsound',elsound);
+	let prefix_to_remove = 'sound_';
+	let sound_name = elsound.substr(prefix_to_remove.length);
+	let sound_volume = volumes['other'];
+	//console.log('sound_name',sound_name);
+	let sound_has_volume = volumes.hasOwnProperty(sound_name);
+	//console.log('sound_has_volume',sound_has_volume);
+	if(sound_has_volume){
+		sound_volume = volumes[sound_name];
+	}
+	//console.log('sound_volume',sound_volume);
+
+	let prefix_to_add = 'sounds/';
+	let suffix_to_add = '.mp3';
+	let sound_file_name = prefix_to_add + sound_name + suffix_to_add;
+	//console.log('playing file',sound_file_name);
+	let audio = new Audio(sound_file_name);
+	audio.volume = sound_volume;
 	audio.play();
 }
 
