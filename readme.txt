@@ -1,7 +1,10 @@
-Chipmunk Server Tester version 1.01 from intercode.ca
+Chipmunk Server Tester version 1.02 from intercode.ca
 ===========================================================
 
 
+whats new in version 1.02??==========================================
+-not creating new audios each beeb, but reusing already created ones to save on memory
+-darker colors!
 
 whats new in version 1.01??==========================================
 -the Chipmunk server tester can also test your database on top of just testing your webserver.

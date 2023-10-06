@@ -25,13 +25,13 @@ var alarm_after_how_many_bad_connections = <?php echo $alarm_after_how_many_bad_
             </div>
 
             <div class="dashbuttons">
-                good volume: <input type="number" id="vol_good" class="vol" value="0.3" step=".1" onchange=""><br>
-                bad volume: <input type="number" id="vol_bad" class="vol" value="1.0" step=".1"><br>
-                other volume: <input type="number" id="vol_other" class="vol" value="0.7" step=".1"><br>
+                good volume: <input type="number" id="vol_good" class="vol" value="0.3" step=".1" onchange="">
+                bad volume: <input type="number" id="vol_bad" class="vol" value="1.0" step=".1">
+                other volume: <input type="number" id="vol_other" class="vol" value="0.7" step=".1">
             </div>
 
             <div class="dashlogs">
-                <h4 class="dashtitle dashsubtitle">problem logs</h4>
+                <h4 class="dashtitle dashsubtitle">problem logs:</h4>
                 <div id="problogs"></div>
             </div>
 

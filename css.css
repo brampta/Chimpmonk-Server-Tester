@@ -1,24 +1,36 @@
+body {
+    background-color: black;
+    color: #9f9f9f;
+}
+input {
+    background-color: black;
+    color: #7a7a7a;
+    border-color: #351e0a;
+    width: 44px;
+}
+
 .dashcontainer{
     padding:16px;
     vertical-align: top;
     display: block;
     border-radius: 10px;
-    background-color: lightgrey;
-    border: 2px solid orange;
+    background-color: #131313;
+    border: 2px solid #442d00;
     display: block;
     margin-bottom: 20px;
 }
 .dashtitle {
-    background-color: #712828;
+    background-color: #1e0909;
     display: block;
     margin: 0;
     margin-bottom: 20px;
     font-size: 40px;
-    color: darkkhaki;
+    color: #4d4b2a;
     padding: 10px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     text-align: center;
+    border: 22px inset #34290c;
 }
 .dashsubtitle {
     font-size: 20px;
@@ -27,16 +39,16 @@
 .dashbuttons {
     font-size: 20px;
     border-radius: 10px;
-    background-color: lightgrey;
-    border: 2px solid orange;
+    background-color: #3b3b3b;
+    border: 2px solid #2c1d00;
     display: block;
     margin-bottom: 20px;
     padding: 20px;
 }
 .dashlogs {
     border-radius: 10px;
-    background-color: lightgrey;
-    border: 2px solid orange;
+    background-color: #525252;
+    border: 2px solid #362500;
     display: block;
     margin-bottom: 20px;
 }
@@ -46,10 +58,26 @@
 .interfooter {
     text-align:center;
     border-radius: 10px;
-    background-color: #462020;
+    background-color: #180b0b;
     display: block;
     margin-bottom: 20px;
+    border: 44px inset #181304;
+    border-top-width: 22px;
+    border-bottom-width: 22px;
 }
 .interfooter a {
-    color: white;
+    color: #312d2d;
+}
+
+/* Hide Arrows From Input Number */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }

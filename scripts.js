@@ -34,6 +34,7 @@ $( ".vol" ).change(function() {
 	volumes[vol_name] = this.value;
 });
 
+var audios = {}
 function makesound(elsound)
 {
 	// var myFlashMovie = document.simpleBroadcaster;
@@ -55,7 +56,17 @@ function makesound(elsound)
 	let suffix_to_add = '.mp3';
 	let sound_file_name = prefix_to_add + sound_name + suffix_to_add;
 	//console.log('playing file',sound_file_name);
-	let audio = new Audio(sound_file_name);
+
+	let audio;
+	if(Object.hasOwn(audios,sound_file_name)){
+		//console.log('audios array already containing this sound, reusing',audios);
+		audio = audios[sound_file_name];
+	}else{
+		//console.log('audios array did not already contain this sound, creating new audio',audios);
+		audio = new Audio(sound_file_name);
+		audios[sound_file_name] = audio;
+	}
+
 	audio.volume = sound_volume;
 	audio.play();
 }
